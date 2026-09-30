@@ -4,6 +4,10 @@ import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { DatabaseModule } from './db/db.module.js';
 import { AuthModule } from './auth/auth.module.js';
+import { RestaurantsController } from './restaurants/restaurants.controller.js';
+import { RestaurantsService } from './restaurants/restaurants.service.js';
+import { RestaurantsModule } from './restaurants/restaurants.module.js';
+import { MenuModule } from './menu/menu.module.js';
 
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
@@ -19,8 +23,10 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       serviceId: 'api',
     }),
     AuthModule,
+    RestaurantsModule,
+    MenuModule,
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [AppController, RestaurantsController],
+  providers: [AppService, RestaurantsService],
 })
 export class AppModule {}
