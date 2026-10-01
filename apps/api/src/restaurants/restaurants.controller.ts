@@ -4,6 +4,7 @@ import {
   Get,
   Param,
   Patch,
+  Query,
   Post,
   Request,
   UseGuards,
@@ -40,8 +41,9 @@ constructor(private restaurantsService: RestaurantsService) {}
   }
 
   @Get()
-  findAll() {
-    return this.restaurantsService.findAll();
+  findAll(@Query('search') search?: string) {
+    // @Query('search') extracts ?search= from the URL — optional
+    return this.restaurantsService.findAll(search);
   }
 
   @Get(':id')
