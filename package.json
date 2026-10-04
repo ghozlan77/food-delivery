@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/ghozlan77/food-delivery/issues"
   },
-  "homepage": "https://github.com/ghozlan77/food-delivery#readme"
+  "homepage": "https://github.com/ghozlan77/food-delivery#readme",
+  "dependencies": {
+    "stripe": "^23.0.0"
+  }
 }
